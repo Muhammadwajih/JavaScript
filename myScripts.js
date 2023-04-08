@@ -1,6 +1,17 @@
 function checkAddress(fieldId) {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  var fieldval = document.getElementById(fieldId).value;
+
+  if (fieldval.match(mailformat)) {
+    alert("Valid email address!");
+  } else {
+    alert("Email not valid!");
+  }
+}
+
+function check(fieldId) {
   if (document.getElementById(fieldId).value === "") {
-    alert("Email address required.");
+    alert("Enter Email Address");
   } else {
     alert(document.getElementById(fieldId).value);
   }
@@ -28,7 +39,7 @@ function greetTheUser() {
 
 function expandLoris() {
   var expandedParagraph =
-    "Slow lorises are a group of several species of trepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals.";
+    "Slow lorises are a group of several species of trepsirrhine primates which make up the genus Nycticebus. They have a round head, narrow snout, large eyes, and a variety of distinctive coloration patterns that are species-dependent. The hands and feet of slow lorises have several adaptations that give them a pincer-like grip and enable them to grasp branches for long periods of time. Slow lorises have a toxic bite, a rare trait among mammals. <a href='#' onclick='placeAList()'>ShowMore</a>";
   document.getElementById("slowLoris").innerHTML = expandedParagraph;
 }
 
@@ -47,17 +58,17 @@ function fillCity() {
     default:
       cityName = "Islamabad";
   }
-  var a = "hello";
   document.getElementById("city").value = cityName;
 }
 
 function placeAList() {
   var listToPlace =
-    "<ol><li>Slow loris</li><li>Fast loris</li><li>Just-right loris</li></ol>";
+    "<ol><li>Slow loris</li><li>Fast loris</li><li>Just-right loris</li></ol> <a href='#' onclick='expandLoris()'>showless</a>";
   document.getElementById("slowLoris").innerHTML = listToPlace;
 }
 
 function makeInvisible() {
+  // document.getElementById("vanish").style.display = "none";
   document.getElementById("vanish").className = "hidden";
 }
 
