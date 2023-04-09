@@ -74,8 +74,40 @@ function makeInvisible() {
 
 function swapPic(type) {
   if (type == "mouseover") {
-    document.getElementById("img").src = "shark.png";
+    document.getElementById("img").src = "/images/shark.png";
   } else if (type == "mouseout") {
-    document.getElementById("img").src = "blob.png";
+    document.getElementById("img").src = "/imagesblob.png";
+  }
+}
+
+function getAddress() {
+  var link = document.getElementById("social");
+  var address = link.href;
+  alert(address);
+}
+
+function changeColor() {
+  var frm = document.getElementById("social");
+  frm.className = "jumbo";
+}
+
+function makeBig() {
+  // document.getElementById("p1").className += "big";
+  // document.getElementById("p1").style.fontSize = "26px";
+  // document.getElementById("pic99").style.cssFloat = "left";
+  // document.getElementById("div9").style.visibility = "hidden";
+  // document.getElementById("pic99").style.margin = "0 10px 0 10px";
+  // alert(document.getElementsByTagName("p")[1].innerHTML);
+  // var par = document.getElementsByTagName("p");
+  // for (var i = 0; i < par.length; i++) {
+  //   par[i].style.fontSize = "50px";
+  // }
+
+  var e = document.getElementById("div9");
+
+  var par = e.getElementsByTagName("p");
+
+  for (var i = 0; i < par.length; i++) {
+    par[i].style.fontSize = "50px";
   }
 }
